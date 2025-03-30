@@ -41,9 +41,9 @@
 		%>
 			
 			<div class="card mb-3 mt-">
-				<img src="Image/writing.png" style="max-width: 100px" class="card-img-top p-2 text-center" alt="Card image cap">
-				<div class="card-body">
-					<div class="card-header"><p class="card-text">Date & time : <%=note.getAddedDate()%></p>
+				<img src="Image/writing.png" style="max-width: 70px" class="card-img-top p-2" alt="...">
+				<div class="card-body shadow">
+					<div class="card-header border border-rounded shadow"><p class="card-text">Date & time : <%=note.getAddedDate()%></p>
 					</div><br>
 					<h5 class="card-title">Title : <%= note.getTitle()%></h5><br>
 					<p class="card-text"><%= note.getContent() %></p><br>

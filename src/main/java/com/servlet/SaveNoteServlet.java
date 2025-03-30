@@ -2,36 +2,35 @@ package com.servlet;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Date;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.*;
 
-import jakarta.servlet.RequestDispatcher;
+import com.entities.Note;
+import com.helper.FactoryProvider;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import com.entities.Note;
-import com.helper.FactoryProvider;
 
 
 
-
-public class SaveNote extends HttpServlet {
+public class SaveNoteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
-    public SaveNote() {
+    public SaveNoteServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	
 	
+	@Override
+	@SuppressWarnings("deprecation")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try
@@ -60,7 +59,10 @@ public class SaveNote extends HttpServlet {
 			tx.commit();
 			session.close();
 			
+			response.sendRedirect("SaveNote.jsp");
+/**			
 			//TELLING BROWSER THAT DATA TO BE SENT WILL BE HTML TYPE
+			
 			response.setContentType("text/html");
 			PrintWriter out=response.getWriter();
 			
@@ -69,6 +71,8 @@ public class SaveNote extends HttpServlet {
 			
 			out.println("<h1 style='text-align:center'>Note is added Successfully..!</h1>");
 			out.println("<h1 style='text-align:center'><a href='all_notes.jsp'>View All Notes</a></h1>");
+			
+			*/
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

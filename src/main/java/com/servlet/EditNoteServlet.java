@@ -22,6 +22,7 @@ public class EditNoteServlet extends HttpServlet {
     }
 
 	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 try {
 			
@@ -38,7 +39,7 @@ try {
 			
 			
 			//LOADING NOTE ID FROM DATA BASE AND TYPE CAST IT TO "NOTE" CLASS TYPE
-			Note note=(Note)session.get(Note.class, noteId);
+			Note note=session.get(Note.class, noteId);
 			
 			note.setTitle(noteTitle);
 			note.setContent(noteContent);

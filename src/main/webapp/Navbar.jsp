@@ -21,7 +21,7 @@
           <a class="nav-link active" href="all_notes.jsp" tabindex="-1" >Show Notes</a>
         </li>
       </ul>
-      <form action="TitleSearch.jsp" method="post" class="d-flex">
+      <form action="TitleSearchServlet" method="post" class="d-flex">
         <input class="form-control me-2" name="titleSearch" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-light " type="submit">Search</button>
       </form>
