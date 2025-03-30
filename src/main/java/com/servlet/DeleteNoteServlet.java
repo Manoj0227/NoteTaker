@@ -9,9 +9,9 @@ import com.entities.Note;
 import com.helper.FactoryProvider;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpServlet;
 
 
 
@@ -24,6 +24,7 @@ public class DeleteNoteServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -41,7 +42,7 @@ public class DeleteNoteServlet extends HttpServlet {
 			
 			
 			//LOADING NOTE ID FROM DATA BASE AND TYPE CAST IT TO "NOTE" CLASS TYPE
-			Note note=(Note)session.get(Note.class, noteId);
+			Note note=session.get(Note.class, noteId);
 			session.delete(note);
 			
 			response.sendRedirect("all_notes.jsp");
